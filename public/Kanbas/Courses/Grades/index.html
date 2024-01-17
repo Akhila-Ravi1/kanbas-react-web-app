@@ -1,0 +1,234 @@
+<html>
+    <!-- Buttons at the top of the page-->
+    <table>
+        <tbody>
+            <tr>
+                <!-- Make it as a dropdown-->
+                <td>
+                    <select id="gradebook-dropdown">
+                        <option selected value="gradebook">Gradebook</option>
+                    </select>
+                </td>
+                <td><button type="button">Import</button></td>
+                <td>
+                    <select id="export-dropdown">
+                        <option selected value="export">Export</option>
+                    </select>
+                </td>
+                
+                <td><button type="button">Configure</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Student names textbox-->
+    <p>
+        <label for="student-names"><h3>Student Names</h3></label>
+        <input type="text" id="student-names" name="student-names" placholder= "Search Students" value="Student Names" disabled>
+    </p>
+
+    <!-- Assignment names textbox-->
+    <p>
+        <label for="assignment-names"><h3>Assignment Names</h3></label>
+        <input type="text" id="assignment-names" name="assignment-names" placholder= "Search Assignments" value="Assignment Names" disabled>
+    </p>
+    
+    <!-- Apply Filter button-->
+    <p>
+        <button type="button">Apply Filters</button>
+    </p>
+
+    <!-- Table to display student name, a1, a2, a3, a4, a5, a6, a7, a8, a9-->
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>A1 SETUP Out of 100</th>
+                <th>A2 HTML Out of 100</th>
+                <th>A3 CSS Out of 100</th>
+                <th>A4 BOOTSTRAP Out of 100</th>
+                <th>A5 JAVASCRIPT Out of 100</th>
+                <th>A6 REACT Out of 100</th>
+                <th>A7 REDUX Out of 100</th>
+                <th>A8 NODE Out of 100</th>
+                <th>A9 MONGO Out of 100</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Alice Wonderland</th>
+                <th>98</th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Princess Leia</th>
+                <th>98</th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="85" style="width: 50%;">
+                </th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Luke Skywalker</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="99" style="width: 50%;">
+                </th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Han Solo</th>
+                <th>98</th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="86" style="width: 50%;">
+                </th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Lando Calresian</th>
+                <th>98</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="92" style="width: 50%;">
+                </th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Boba Fet</th>
+                <th>98</th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Darth Vader</th>
+                <th>98</th>
+                <th>89</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="87" style="width: 50%;">
+                </th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Obi Wan Kenobi</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="85" style="width: 50%;">
+                </th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>R2-D2</th>
+                <th>98</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="85" style="width: 50%;">
+                </th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="82" style="width: 50%;">
+                </th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>C-3PO</th>
+                <th>98</th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Yoda</th>
+                <th>98</th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>89</th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+
+            <tr>
+                <th>Admiral Ackbar</th>
+                <th>98</th>
+                <th>89</th>
+                <th>87</th>
+                <th>90</th>
+                <th>
+                    <input type="text" id="a5-marks" name="a5-marks" value="89" style="width: 50%;">
+                </th>
+                <th>94</th>
+                <th>88</th>
+                <th>87</th>
+                <th>100</th>
+            </tr>
+        </tbody>
+       
+    </table>
+</html>
