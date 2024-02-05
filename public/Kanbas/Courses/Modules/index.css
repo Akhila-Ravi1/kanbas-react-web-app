@@ -27,7 +27,27 @@
   border-left: 2px solid green;
 }
 
+.wd-modules > li > ul > ul > li{
+    padding-left: 28px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    border-top: 1px solid gray !important;
+    border-left: 2px solid green;
+  }
+
 .wd-modules > li {
   margin-bottom: 20px;
 }
 
+.btn-spacing {
+    margin-right: 0.2em; 
+}
+
+.chk-icon-spacing {
+    margin-right: 0.4em; 
+}
+
+.caret-icon-spacing {
+    margin-left: 0.4em; 
+}

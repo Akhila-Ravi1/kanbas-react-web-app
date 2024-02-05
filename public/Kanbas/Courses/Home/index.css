@@ -1,0 +1,53 @@
+.navbar-red-color{
+    color: red;
+}
+
+.navbar-gray-color{
+    color: gray;
+}
+
+.navbar-padding{
+    padding-right: 0.3em;
+}
+
+.btn-color{
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.btn-set{
+    margin-top: 1em;
+}
+
+.btn-padding{
+    margin-top: 0.4em;
+    width: 100%;
+    text-align: left;
+}
+
+.todo-set{
+    margin-top: 1.5em;
+}
+
+.calendar-text{
+    color: red;
+    font-size: 11px;
+}
+
+.coming-up-text{
+    color: red;
+    font-size: 13px;
+    padding-left: 0.5em;
+}
+
+.coming-up-body-text{
+    padding-left: 2em;
+    font-size: 13px;
+    color: gray;
+}
+
+.dot-icon{
+    font-size: 6px;
+    margin: 0.1em;
+    padding: 0.2em
+}
