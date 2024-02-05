@@ -52,3 +52,11 @@
     margin-top: 3rem;
     background-color: #f0f0f0;
 }
+
+.label-text{
+    font-weight: bold;
+}
+
+.search-icon{
+    height: 38px;
+}

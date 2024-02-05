@@ -1,0 +1,25 @@
+.import-icon{
+    padding: 0.25rem;
+    font-size: 1rem;
+}
+
+.btn-spacing{
+    margin-right: 0.75rem
+}
+
+.caret-icon{
+    padding: 0.25rem;
+}
+
+.filter-icon{
+    padding: 0.25rem;
+}
+
+.filter-btn{
+    margin-top: 1rem;
+}
+
+.td-input-field{
+    width: 25%;
+    text-align: center;
+}

@@ -1,312 +1,288 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
 
 <body>
-    <table>
-        <tbody>
-            <tr>
-                <!--Kanbas Navigation-->
-                <td>
-                    <ul class="wd-kanbas-navigation">
-                        <li><a href="http://northeastern.edu"><img src="/images/neu_logo.png" alt="..."></a></li>
-                        <li><a href="/Kanbas/Account/Profile/screen.html"><span><i class="fa fa-user-circle-o" aria-hidden="true"></i></span> Account</a></li>
-                        <li class="wd-active">
-                            <a href="/Kanbas/Dashboard/screen.html">
-                                <i class="fa fa-tachometer"></i> Dashboard</a>
-                        </li>
-                        <li><a href="/Kanbas/Courses/Home/screen.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a> </li>
-                        <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
-                        <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i><br> Inbox</a></li>
-                        <li><a href="#"><i class="fa fa-clock-o fa-flip-horizontal" aria-hidden="true"></i> History</a></li>
-                        <li><a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Studio</a></li>
-                        <li><a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i> Commons</a></li>
-                        <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i><br> Help</a></li>
-                    </ul>
-                </td>
+    <!-- Implement links to Kanbas and Course Navigation -->
+    <div class="d-flex">
+        <!-- Kanbas Navigation-->
+        <div class="d-none d-md-block">
+            <ul class="wd-kanbas-navigation">
+                <li><a href="http://northeastern.edu"><img src="/images/neu_logo.png" alt="..."></a></li>
+                <li><a href="/Kanbas/Account/Profile/screen.html"><span><i class="fa fa-user-circle-o"
+                                aria-hidden="true"></i></span> Account</a></li>
+                <li>
+                    <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fa fa-tachometer"></i> Dashboard</a>
+                </li>
+                <li class="wd-active">
+                    <a href="/Kanbas/Courses/Home/screen.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
+                </li>
+                <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
+                <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i><br> Inbox</a></li>
+                <li><a href="#"><i class="fa fa-clock-o fa-flip-horizontal" aria-hidden="true"></i> History</a></li>
+                <li><a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Studio</a></li>
+                <li><a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i> Commons</a></li>
+                <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i><br> Help</a></li>
+            </ul>
+        </div>
+
+        <div class="d-flex flex-column w-100" style="padding: 1em;">
+            <!--Nav bar-->
+            <div>
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 
-                <!--Course Navigation-->
-                <td valign="top">
-                    <ul class="wd-navigation">
-                        <li>
-                            <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                        </li>
-                        <li><a href="http://piazza.com">Piazza</a></li>
-                        <li><a href="#">Zoom</a></li>
-                        <li>
-                            <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                        </li>
-                        <li><a href="#">Quizzes</a></li>
-                        <li class="wd-active">
-                            <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                        </li>
-                        <li><a href="#">People</a></li>
-        
-                        <li><a href="#">Panopto Video</a></li>
-                        <li><a href="#">Discussions</a></li>
-                        <li><a href="#">Announcements</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Files</a></li>
-                        <li><a href="#">Rubrics</a></li>
-                        <li><a href="#">Outcomes</a></li>
-                        <li><a href="#">Syllabus</a></li>
-                        <li><a href="#">Settings</a></li>
-                </ul>
-                </td>
+                    <div style="display: flex; justify-content: space-between;">
+                        <ol class="breadcrumb">
+                            <button type="button" class="btn navbar-red-color navbar-padding">
+                                <i class="fa fa-bars"></i>
+                            </button>                            
+                            <li class="breadcrumb-item navbar-red-color" aria-current="page">CS4550.12631.202410</li>
+                            <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                        </ol>
+                        <ol>
+                            <!--Button for Student view-->
+                            <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing">
+                                <i class='fas fa-glasses'></i> Student View
+                            </button>
+                        </ol>
+                    </div>
+                </nav>
+            </div>
 
-                <!--Grades-->
-                <td valign="top">
-                    <!-- Buttons at the top of the page-->
-                    <table>
-                        <tbody>
-                            <tr>
-                                <!-- Make it as a dropdown-->
-                                <td>
-                                    <select id="gradebook-dropdown">
-                                        <option selected value="gradebook">Gradebook</option>
-                                    </select>
-                                </td>
-                                <td><button type="button">Import</button></td>
-                                <td>
-                                    <select id="export-dropdown">
-                                        <option selected value="export">Export</option>
-                                    </select>
-                                </td>
+            <!-- Nav bar, course nav, course home and course status-->
+            <div class="d-flex flex-column w-100">
+                <hr />
 
-                                <td><button type="button">Configure</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="d-flex">
 
-                    <!-- Student names textbox-->
-                    <p>
-                        <label for="student-names">
-                            <h3>Student Names</h3>
-                        </label>
-                        <input type="text" id="student-names" name="student-names" placholder="Search Students"
-                            value="Student Names" disabled>
-                    </p>
+                    <!-- Course Navigation-->
+                    <div class="d-none d-md-block">
+                        <ul class="wd-navigation" style="margin-left: 0">
+                            <li>
+                                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                            </li>
+                            <li><a href="http://piazza.com">Piazza</a></li>
+                            <li><a href="#">Zoom</a></li>
+                            <li>
+                                <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                            </li>
+                            <li><a href="#">Quizzes</a></li>
+                            <li class="wd-active">
+                                <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                            </li>
+                            <li><a href="#">People</a></li>
 
-                    <!-- Assignment names textbox-->
-                    <p>
-                        <label for="assignment-names">
-                            <h3>Assignment Names</h3>
-                        </label>
-                        <input type="text" id="assignment-names" name="assignment-names" placholder="Search Assignments"
-                            value="Assignment Names" disabled>
-                    </p>
+                            <li><a href="#">Panopto Video</a></li>
+                            <li><a href="#">Discussions</a></li>
+                            <li><a href="#">Announcements</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li><a href="#">Files</a></li>
+                            <li><a href="#">Rubrics</a></li>
+                            <li><a href="#">Outcomes</a></li>
+                            <li><a href="#">Syllabus</a></li>
+                            <li><a href="#">Settings</a></li>
+                        </ul>
 
-                    <!-- Apply Filter button-->
-                    <p>
-                        <button type="button">Apply Filters</button>
-                    </p>
+                    </div>
 
-                    <!-- Table to display student name, a1, a2, a3, a4, a5, a6, a7, a8, a9-->
-                    <table border="1" width="100%">
-                        <thead>
-                            <tr>
-                                <th>Student Name</th>
-                                <th>A1 SETUP Out of 100</th>
-                                <th>A2 HTML Out of 100</th>
-                                <th>A3 CSS Out of 100</th>
-                                <th>A4 BOOTSTRAP Out of 100</th>
-                                <th>A5 JAVASCRIPT Out of 100</th>
-                                <th>A6 REACT Out of 100</th>
-                                <th>A7 REDUX Out of 100</th>
-                                <th>A8 NODE Out of 100</th>
-                                <th>A9 MONGO Out of 100</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Alice Wonderland</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                    <!-- Course Home-->
+                    <div class="flex-fill" style="padding-left: 4em">
+                        <!-- Buttons-->    
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing btn-color">
+                                <i class="fas fa-file-import import-icon" aria-hidden="true"></i>Import
+                            </button>
 
-                            <tr>
-                                <th>Princess Leia</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="85" style="width: 50%;">
-                                </th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                            <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing btn-color">
+                                <i class="fas fa-file-export import-icon" aria-hidden="true"></i>Export
+                                <i class="fas fa-caret-down caret-icon"></i>
+                            </button>
+                            
+                            <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing btn-color">
+                                <i class="fas fa-gear import-icon"></i>
+                            </button>
+                        </div>
 
-                            <tr>
-                                <th>Luke Skywalker</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="99" style="width: 50%;">
-                                </th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                        <!-- Grades-->
 
-                            <tr>
-                                <th>Han Solo</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="86" style="width: 50%;">
-                                </th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                        <!-- Search icons-->
+                        <div class="row">
+                            <!-- Search Students-->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="studentNames" class="form-label">
+                                        <span style="font-weight: bold;">Student Names</span>
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text search-icon" style="height: 38px;" id="basic-addon1"><i class="fas fa-search"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Search Students" aria-label="Search" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
 
-                            <tr>
-                                <th>Lando Calresian</th>
-                                <th>98</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="92" style="width: 50%;">
-                                </th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                            <!-- Search Assignment-->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="assignmentName" class="form-label label-text">
+                                        <span style="font-weight: bold;">Assignment Names</span>
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text search-icon" style="height: 38px;" id="basic-addon1"><i class="fas fa-search"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Search Assignments" aria-label="Search" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                            <tr>
-                                <th>Boba Fet</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                        <!-- Filter icon-->
+                        <div class="d-flex justify-content-start" style="margin-top: 1rem;">
+                            <button type="button" class="btn btn-outline-secondary btn-sm margin-top btn-color">
+                                <i class="fa fa-filter filter-icon" aria-hidden="true"></i>Apply Filter
+                            </button>
+                        </div>
 
-                            <tr>
-                                <th>Darth Vader</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="87" style="width: 50%;">
-                                </th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                        <!--Grades table-->
+                        <div class="d-flex justify-content-start" style="margin-top: 1rem;">
+                        <table class="table table-striped table-bordered text-center">
+                            <!-- Headers -->
+                            <thead>
+                                <tr class="table-active">
+                                    <th scope="col">Student Name</th>
+                                    <th scope="col">A1 SETUP<br/>Out of 100</th>
+                                    <th scope="col">A2 HTML<br />Out of 100</th>
+                                    <th scope="col">A3 CSS<br />Out of 100</th>
+                                    <th scope="col">A4 BOOTSTRAP<br />Out of 100</th>
+                                </tr>
+                            </thead>
 
-                            <tr>
-                                <th>Obi Wan Kenobi</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="85" style="width: 50%;">
-                                </th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                            <tbody>
+                                <!-- Student 1-->
+                                <tr>
+                                    <td>Doxa Asibey</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td style="display: flex; justify-content: center;"><input type="text" class="form-control td-input-field" value="92%"></td>
+                                </tr>
 
-                            <tr>
-                                <th>R2-D2</th>
-                                <th>98</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="85" style="width: 50%;">
-                                </th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="82" style="width: 50%;">
-                                </th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                                <!-- Student 2-->
+                                <tr>
+                                    <td>Thuy Tien Bui</td>
+                                    <td>90%</td>
+                                    <td style="display: flex; justify-content: center;"><input type="text" class="form-control td-input-field" value="85%"></td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
 
-                            <tr>
-                                <th>C-3PO</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                                <!-- Student 3-->
+                                <tr>
+                                    <td>Zhenyu Chen</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
 
-                            <tr>
-                                <th>Yoda</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>89</th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
+                                <!-- Student 4-->
+                                <tr>
+                                    <td>Yung Chien Shein</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
 
-                            <tr>
-                                <th>Admiral Ackbar</th>
-                                <th>98</th>
-                                <th>89</th>
-                                <th>87</th>
-                                <th>90</th>
-                                <th>
-                                    <input type="text" id="a5-marks" name="a5-marks" value="89" style="width: 50%;">
-                                </th>
-                                <th>94</th>
-                                <th>88</th>
-                                <th>87</th>
-                                <th>100</th>
-                            </tr>
-                        </tbody>
+                                <!-- Student 5-->
+                                <tr>
+                                    <td>George Smith</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td style="display: flex; justify-content: center;"><input type="text" class="form-control td-input-field" value="88%"></td>
+                                    <td>92%</td>
+                                </tr>
+                                
+                                <!-- Student 6-->
+                                <tr>
+                                    <td>Luke Danes</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
 
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                                <!-- Student 7-->
+                                <tr>
+                                    <td>Racheal Dao</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
 
+                                <!-- Student 8-->
+                                <tr>
+                                    <td>Lana Do</td>
+                                    <td>90%</td>
+                                    <td style="display: flex; justify-content: center;"><input type="text" class="form-control td-input-field" value="85%"></td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
+
+                                <!-- Student 9-->
+                                <tr>
+                                    <td>Jiarong Feng</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
+
+                                <!-- Student 10-->
+                                <tr>
+                                    <td>Basil Coughlan</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
+
+                                <!-- Student 11-->
+                                <tr>
+                                    <td>Karthik Dwivedi</td>
+                                    <td>90%</td>
+                                    <td>85%</td>
+                                    <td>88%</td>
+                                    <td>92%</td>
+                                </tr>
+                            </tbody>
+                        </table>  
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
+
 
 </html>
