@@ -1,0 +1,14 @@
+.txt-title{
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 1em;
+}
+
+.ellipsis-icon{
+    padding-left: 0.5em;
+}
+
+.edit-icon{
+    color: green;
+    padding-left: 1em;
+}
