@@ -12,3 +12,26 @@
     color: green;
     padding-left: 1em;
 }
+
+.caret-down-icon{
+    padding-left: 1em;
+}
+
+.btn-total{
+    border: 1px solid;
+    padding: 0.15rem 0.5rem;
+}
+
+.icon-right-padding{
+    padding-right: 0.7rem;
+}
+
+.txt-subtitle{
+    font-size: 14px;
+    padding-left: 5rem;
+    color: gray;
+}
+
+.txt-bold{
+    font-weight: bold;
+}

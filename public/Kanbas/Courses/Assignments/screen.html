@@ -39,17 +39,22 @@
             <!--Nav bar-->
             <div>
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <i class="fa fa-bars navbar-red-color navbar-padding" aria-hidden="true"></i>
-                        <li class="breadcrumb-item navbar-red-color" aria-current="page">CS4550.12631.202410</li>
-                        <li class="breadcrumb-item active" aria-current="page">Assignments</li>
-
-                        <!--Button for Student view-->
-                        <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing"
-                            style="margin-left: 56em">
-                            <i class='fas fa-glasses'></i> Student View
-                        </button>
-                    </ol>
+                
+                    <div style="display: flex; justify-content: space-between;">
+                        <ol class="breadcrumb">
+                            <button type="button" class="btn navbar-red-color navbar-padding">
+                                <i class="fa fa-bars"></i>
+                            </button>                            
+                            <li class="breadcrumb-item navbar-red-color" aria-current="page">CS4550.12631.202410</li>
+                            <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+                        </ol>
+                        <ol>
+                            <!--Button for Student view-->
+                            <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing">
+                                <i class='fas fa-glasses'></i> Student View
+                            </button>
+                        </ol>
+                    </div>
                 </nav>
             </div>
 
@@ -95,8 +100,7 @@
                         <!-- Buttons-->
                         <div class="d-flex">
                             <div class="flex-fill justify-content-start">
-                                <input type="text" class="form-control" placeholder="Search for Assignment"
-                                    style="width: 50%;">
+                                <input type="text" class="form-control w-25" placeholder="Search for Assignment">
                             </div>
 
                             <div class="d-flex justify-content-end">
@@ -116,30 +120,175 @@
                         <!-- Assignments-->
                         <ul class="list-group wd-modules">
                             <li class="list-group-item">
+                                <!-- Title bar-->
                                 <div>
                                     <i class="fa fa-ellipsis-v ellipsis-icon"></i>
                                     <i class="fa fa-ellipsis-v"></i> 
+                                    <i class="fa fa-caret-down caret-down-icon" aria-hidden="true"></i>
                                     <span class="txt-title">Assignments</span>
                                     <span class="float-end">
-                                        <i class="fa fa-check-circle text-success"></i>
-                                        <i class="fa fa-plus ms-2"></i>
-                                        <i class="fa fa-ellipsis-v ms-2"></i>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary btn-total icon-right-padding rounded">40% of Total</button>
+                                        <i class="fa fa-plus ms-2 icon-right-padding"></i>
+                                        <i class="fa fa-ellipsis-v ms-2 icon-right-padding"></i>
                                     </span>
                                 </div>
 
+                                <!-- Item 1-->
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        <i class="fa fa-ellipsis-v ellipsis-icon"></i>
-                                        <i class="fa fa-ellipsis-v"></i>
-                                        <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
-                                        <span class="txt-title">A1 SETUP</span>
-                                        <span class="float-end">
-                                            <i class="fa fa-check-circle text-success"></i>
-                                            <i class="fa fa-ellipsis-v ms-2"></i>
-                                        </span>
+                                    
+                                        <div class="align-items-center gap-4">
+                                            <i class="fa fa-ellipsis-v ellipsis-icon"></i>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                            <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                                            <a href="/Kanbas/Courses/Assignments/Edit/screen.html" class="txt-title text-decoration-none link-dark">A1 SETUP</a>
+                                            <span class="float-end">
+                                                <i class="fa fa-check-circle text-success icon-right-padding"></i>
+                                                <i class="fa fa-ellipsis-v ms-2 icon-right-padding"></i>
+                                            </span>
+
+                                            <div class="txt-subtitle">
+                                                <span>Week 0 - SETUP - Week Starting on Mon</span>
+                                                <br>
+                                                <span><span class="txt-bold">Due</span> Sep 18, 2022 at 11:59pm  |  100 points</span>
+                                            </div>
+                                            
+                                        </div>
+                                        
                                     </li>
 
                                 </ul>
+
+                                <!-- Item 2-->
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                    
+                                        <div class="align-items-center gap-4">
+                                            <i class="fa fa-ellipsis-v ellipsis-icon"></i>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                            <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                                            <a href="/Kanbas/Courses/Assignments/Edit/screen.html" class="txt-title text-decoration-none link-dark">A2 HTML</a>
+                                            <span class="float-end">
+                                                <i class="fa fa-check-circle text-success icon-right-padding"></i>
+                                                <i class="fa fa-ellipsis-v ms-2 icon-right-padding"></i>
+                                            </span>
+
+                                            <div class="txt-subtitle">
+                                                <span>Week 1 - HTML - Week Starting on Mon</span>
+                                                <br>
+                                                <span><span class="txt-bold">Due</span> Sep 25, 2022 at 11:59pm  |  100 points</span>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </li>
+
+                                </ul>
+
+                                <!-- Item 3 -->
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                    
+                                        <div class="align-items-center gap-4">
+                                            <i class="fa fa-ellipsis-v ellipsis-icon"></i>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                            <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                                            <a href="/Kanbas/Courses/Assignments/Edit/screen.html" class="txt-title text-decoration-none link-dark">A3 CSS</a>
+                                            <span class="float-end">
+                                                <i class="fa fa-check-circle text-success icon-right-padding"></i>
+                                                <i class="fa fa-ellipsis-v ms-2 icon-right-padding"></i>
+                                            </span>
+
+                                            <div class="txt-subtitle">
+                                                <span>Week 2 - CSS - Week Starting on Mon</span>
+                                                <br>
+                                                <span><span class="txt-bold">Due</span> Oct 2, 2022 at 11:59pm  |  100 points</span>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </li>
+
+                                </ul>
+
+                                <!-- Item 4 -->
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                    
+                                        <div class="align-items-center gap-4">
+                                            <i class="fa fa-ellipsis-v ellipsis-icon"></i>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                            <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                                            <a href="/Kanbas/Courses/Assignments/Edit/screen.html" class="txt-title text-decoration-none link-dark">A4 BOOTSTRAP</a>
+                                            <span class="float-end">
+                                                <i class="fa fa-check-circle text-success icon-right-padding"></i>
+                                                <i class="fa fa-ellipsis-v ms-2 icon-right-padding"></i>
+                                            </span>
+
+                                            <div class="txt-subtitle">
+                                                <span>Week 3 - BOOTSTRAP - Week Starting on Mon</span>
+                                                <br>
+                                                <span><span class="txt-bold">Due</span> Oct 10, 2022 at 11:59pm  |  100 points</span>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </li>
+
+                                </ul>
+
+                                <!-- Item 5 -->
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                    
+                                        <div class="align-items-center gap-4">
+                                            <i class="fa fa-ellipsis-v ellipsis-icon"></i>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                            <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                                            <a href="/Kanbas/Courses/Assignments/Edit/screen.html" class="txt-title text-decoration-none link-dark">A5 JAVASCRIPT</a>
+                                            <span class="float-end">
+                                                <i class="fa fa-check-circle text-success icon-right-padding"></i>
+                                                <i class="fa fa-ellipsis-v ms-2 icon-right-padding"></i>
+                                            </span>
+
+                                            <div class="txt-subtitle">
+                                                <span>Week 4 - JAVASCRIPT - Week Starting on Mon</span>
+                                                <br>
+                                                <span><span class="txt-bold">Due</span> Oct 16, 2022 at 11:59pm  |  100 points</span>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </li>
+
+                                </ul>
+
+                                <!-- Item 6-->
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                    
+                                        <div class="align-items-center gap-4">
+                                            <i class="fa fa-ellipsis-v ellipsis-icon"></i>
+                                            <i class="fa fa-ellipsis-v"></i>
+                                            <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+                                            <a href="/Kanbas/Courses/Assignments/Edit/screen.html" class="txt-title text-decoration-none link-dark">A6 REACT</a>
+                                            <span class="float-end">
+                                                <i class="fa fa-check-circle text-success icon-right-padding"></i>
+                                                <i class="fa fa-ellipsis-v ms-2 icon-right-padding"></i>
+                                            </span>
+
+                                            <div class="txt-subtitle">
+                                                <span>Week 6 - REACT - Week Starting on Mon</span>
+                                                <br>
+                                                <span><span class="txt-bold">Due</span> Oct 23, 2022 at 11:59pm  |  100 points</span>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </li>
+
+                                </ul>
+                                
                             </li>
 
                         </ul>
