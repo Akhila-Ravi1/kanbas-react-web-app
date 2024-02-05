@@ -19,11 +19,12 @@
                 <li><a href="http://northeastern.edu"><img src="/images/neu_logo.png" alt="..."></a></li>
                 <li><a href="/Kanbas/Account/Profile/screen.html"><span><i class="fa fa-user-circle-o"
                                 aria-hidden="true"></i></span> Account</a></li>
-                <li class="wd-active">
+                <li>
                     <a href="/Kanbas/Dashboard/screen.html">
                         <i class="fa fa-tachometer"></i> Dashboard</a>
                 </li>
-                <li><a href="/Kanbas/Courses/Home/screen.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
+                <li class="wd-active">
+                    <a href="/Kanbas/Courses/Home/screen.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
                 </li>
                 <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
                 <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i><br> Inbox</a></li>
@@ -36,26 +37,44 @@
 
         <div class="d-flex flex-column w-100" style="padding: 1em;">
             <!--Nav bar-->
-            <div>
-                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                
-                    <div style="display: flex; justify-content: space-between;">
-                        <ol class="breadcrumb">
-                            <button type="button" class="btn navbar-red-color navbar-padding">
-                                <i class="fa fa-bars"></i>
-                            </button>                            
-                            <li class="breadcrumb-item navbar-red-color" aria-current="page">CS4550.12631.202410</li>
-                            <li class="breadcrumb-item active" aria-current="page">Modules</li>
-                        </ol>
-                        <ol>
-                            <!--Button for Student view-->
-                            <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing">
-                                <i class='fas fa-glasses'></i> Student View
-                            </button>
-                        </ol>
+            <div class="d-flex flex-column w-100" style="padding: 1em;">
+                <!--Nav bar-->
+                <div class="d-md-none bg-dark text-white py-4">
+                    <div class="container-fluid d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn text-white">
+                            <i class="fa fa-bars"><a href=""></a></i>
+                        </button>
+                        <span>CS4550.12631.202410</span>
+                        <button type="button" class="btn text-white">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
                     </div>
-                </nav>
-            </div>
+                </div>
+    
+                <div class="d-none d-md-block">
+                    <div>
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    
+                            <div style="display: flex; justify-content: space-between;">
+                                <ol class="breadcrumb">
+                                    <button type="button" class="btn navbar-red-color navbar-padding">
+                                        <i class="fa fa-bars"></i>
+                                    </button>                            
+                                    <li class="breadcrumb-item navbar-red-color" aria-current="page">CS4550.12631.202410</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+                                </ol>
+                                <ol>
+                                    <!--Button for Student view-->
+                                    <button type="button" class="btn btn-outline-secondary btn-sm btn-spacing">
+                                        <i class='fas fa-glasses'></i> Student View
+                                    </button>
+                                </ol>
+                            </div>
+                        </nav>
+                    </div>
+                    
+                </div>
+                
 
             <!-- Nav bar, course nav, course home and course status-->
             <div class="d-flex flex-column w-100">
