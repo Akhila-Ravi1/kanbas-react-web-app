@@ -57,6 +57,46 @@
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    
+
+.wd-navbar{
+    list-style: none;
+    padding: 1rem;
+}
+
+.wd-navbar li{
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1em;
+    /* text-align: center; */
+}
+
+.wd-navbar a i {
+    color: red;
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.wd-navbar li a {
+    color: red;
+}
+
+.kanbas-navbar-icon{
+    padding-right: 1rem;
+}
+
+.wd-course-navbar{
+    background-color: white;
+    list-style: none;
+    padding: 1rem;
+    margin: 0px;
+    margin-left: 1rem;
+}
+
+.wd-course-navbar a{
+    color: red;
+    text-decoration: none;
+}
+
+.wd-course-navbar i{
+    padding-right: 1rem;
 }
