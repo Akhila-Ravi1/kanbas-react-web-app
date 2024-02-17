@@ -24,7 +24,7 @@ function KanbasNavigation() {
                     {link.label ? (
                         <Link to={`/Kanbas/${link.label}`}>{link.icon} {link.label}</Link>
                     ) : (
-                        // External link
+                        // External link for NEU logo
                         <>{link.icon}</>
                     )}
                 </li>
