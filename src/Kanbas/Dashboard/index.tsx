@@ -23,7 +23,7 @@ function Dashboard() {
                                 <div className="card-body">
                                     <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}
                                         style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
-                                        {course.number}{course.name} </Link>
+                                        {course.number} {course.name} </Link>
                                     <p className="card-text">{course.semester}</p>
                                     <Link to={`/Kanbas/Courses/${course._id}/Home`}><FaEdit style={{color:"gray"}}/></Link>
                                 </div>
