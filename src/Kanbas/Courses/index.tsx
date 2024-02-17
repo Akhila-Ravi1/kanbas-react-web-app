@@ -2,6 +2,7 @@ import { courses } from "../../Kanbas/Database";
 import { Navigate, Link, Route, Routes, useParams, useLocation } from "react-router-dom";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
+import Home from "./Home";
 import './index.css';
 import { FaBars, FaGlasses } from "react-icons/fa";
 
@@ -55,7 +56,7 @@ function Courses() {
                     style={{ left: "320px", top: "5rem" }} >
                     <Routes>
                         <Route path="/" element={<Navigate to="Home" />} />
-                        <Route path="Home" element={<h1>Home</h1>} />
+                        <Route path="Home" element={<Home />} />
                         <Route path="Modules" element={<Modules />} />
                         <Route path="Piazza" element={<h1>Piazza</h1>} />
                         <Route path="Assignments" element={<h1>Assignments</h1>} />
