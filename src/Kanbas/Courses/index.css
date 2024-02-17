@@ -1,0 +1,160 @@
+.custom-breadcrumb {
+    --bs-breadcrumb-divider: ">";
+}
+
+.custom-breadcrumb div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-breadcrumb ol {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 1.2rem;
+    /* Remove default margin */
+}
+
+.custom-breadcrumb ol button {
+    margin-right: 1rem;
+    /* Adjust as needed */
+}
+
+.custom-breadcrumb ol li {
+    margin-right: 1rem;
+    /* Adjust as needed */
+}
+
+.custom-breadcrumb ol:last-child {
+    margin-left: auto;
+    /* Push the last ol to the right */
+}
+
+.custom-breadcrumb ol li a {
+    color: red; /* Set the text color to red */
+    text-decoration: none; /* Remove the underline */
+    font-size: 1.2rem;
+}
+  
+.custom-breadcrumb ol li a:hover {
+text-decoration: underline; /* Add underline on hover if needed */
+}
+  
+.navbar-red-color {
+    color: red;
+}
+
+.btn-for-student-view {
+    margin-left: auto;
+    /* Move the button to the right */
+}
+
+.navbar-gray-color {
+    color: gray;
+}
+
+.custom-semester{
+    font-size:small;
+    color:gray;
+    margin-left: 2rem;
+    max-width: 11rem; /* Adjust as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.navbar-padding {
+    padding-right: 0.6em;
+    padding-top: 0.2em;
+}
+
+.btn-color {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.btn-set {
+    margin-top: 1em;
+}
+
+.btn-padding {
+    margin-top: 0.4em;
+    width: 100%;
+    text-align: left;
+}
+
+.todo-set {
+    margin-top: 1.5em;
+}
+
+.calendar-text {
+    color: red;
+    font-size: 11px;
+}
+
+.coming-up-text {
+    color: red;
+    font-size: 13px;
+    padding-left: 0.5em;
+}
+
+.coming-up-body-text {
+    padding-left: 2em;
+    font-size: 13px;
+    color: gray;
+}
+
+.dot-icon {
+    font-size: 6px;
+    margin: 0.1em;
+    padding: 0.2em
+}
+
+.breadcrumb {
+    text-align: center;
+}
+
+
+.wd-navbar {
+    list-style: none;
+    padding: 1rem;
+}
+
+.wd-navbar li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1em;
+    /* text-align: center; */
+}
+
+.wd-navbar a i {
+    color: red;
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.wd-navbar li a {
+    color: red;
+}
+
+.kanbas-navbar-icon {
+    padding-right: 1rem;
+}
+
+.wd-course-navbar {
+    background-color: white;
+    list-style: none;
+    padding: 1rem;
+    margin: 0px;
+    margin-left: 1rem;
+}
+
+.wd-course-navbar a {
+    color: red;
+    text-decoration: none;
+}
+
+.wd-course-navbar i {
+    padding-right: 1rem;
+}
