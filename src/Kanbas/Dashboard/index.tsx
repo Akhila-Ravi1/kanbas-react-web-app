@@ -15,17 +15,17 @@ function Dashboard() {
                             <div className="card">
                                 {/* Image */}
                                 <img src={`/images/${course.image}`} className="card-img-top"
-                                    style={{ height: 150 }} />
+                                    style={{ height: 150 }} alt="" />
                                 {/* Ellipsis icon */}
                                 <FaEllipsisV style={{ position: "absolute", right: 10, top: 10, color: "#f0f0f0" }} />
-                                
+
                                 {/* Content */}
                                 <div className="card-body">
                                     <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}
                                         style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
                                         {course.number} {course.name} </Link>
                                     <p className="card-text">{course.semester}</p>
-                                    <Link to={`/Kanbas/Courses/${course._id}/Home`}><FaEdit style={{color:"gray"}}/></Link>
+                                    <Link to={`/Kanbas/Courses/${course._id}/Home`}><FaEdit style={{ color: "gray" }} /></Link>
                                 </div>
                             </div>
                         </div>
