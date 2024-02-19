@@ -2,7 +2,7 @@
     --bs-breadcrumb-divider: ">";
 }
 
-.custom-breadcrumb div{
+.custom-breadcrumb div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,15 +32,18 @@
 }
 
 .custom-breadcrumb ol li a {
-    color: red; /* Set the text color to red */
-    text-decoration: none; /* Remove the underline */
+    color: red;
+    /* Set the text color to red */
+    text-decoration: none;
+    /* Remove the underline */
     font-size: 1.2rem;
 }
-  
+
 .custom-breadcrumb ol li a:hover {
-text-decoration: underline; /* Add underline on hover if needed */
+    text-decoration: underline;
+    /* Add underline on hover if needed */
 }
-  
+
 .navbar-red-color {
     color: red;
 }
@@ -54,11 +57,12 @@ text-decoration: underline; /* Add underline on hover if needed */
     color: gray;
 }
 
-.custom-semester{
-    font-size:small;
-    color:gray;
+.custom-semester {
+    font-size: small;
+    color: gray;
     margin-left: 2rem;
-    max-width: 11rem; /* Adjust as needed */
+    max-width: 11rem;
+    /* Adjust as needed */
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -157,4 +161,13 @@ text-decoration: underline; /* Add underline on hover if needed */
 
 .wd-course-navbar i {
     padding-right: 1rem;
+}
+
+.collapse-course-icons {
+    margin-right: 1rem;
+}
+
+.collapse-kanbas-icons {
+    margin-right: 0.5rem;
+    text-decoration: none;
 }

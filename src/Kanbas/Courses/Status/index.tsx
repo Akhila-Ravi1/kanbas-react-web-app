@@ -5,8 +5,13 @@ import { GrAnnounce } from "react-icons/gr";
 import { FaRegCircleDot, FaBan } from "react-icons/fa6";
 import { IoMdInformationCircle } from "react-icons/io";
 import "./index.css";
+import { useParams } from "react-router-dom";
+import { courses } from "../../Database";
 
 function CourseStatus() {
+    const { courseId } = useParams();
+    const course = courses.find((course) => course._id === courseId);
+
     return (
         <div className="flex-grow-0 me-2 d-none d-lg-block" style={{ width: "250px", paddingLeft: "1.2em" }}>
             <h5>Course Status</h5>
@@ -78,7 +83,7 @@ function CourseStatus() {
                     <span className="coming-up-text">Lecture</span>
                 </div>
                 <div className="coming-up-body-text">
-                    <span>CS4550.12631.202410</span><br />
+                    <span>{course?.number}</span><br />
                     <span>Sep 11 at 11:45am</span>
                 </div>
 
