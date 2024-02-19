@@ -20,7 +20,7 @@ function Courses() {
     return (
         <div>
             {/* Breadcrumb */}
-            <div>
+            <div className="d-none d-md-block">
                 <nav className="custom-breadcrumb" aria-label="breadcrumb">
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <ol className="breadcrumb">
@@ -44,30 +44,40 @@ function Courses() {
 
             <hr />
 
-            {/* Course semester on top of course nav */}
-            <div className="custom-semester">
-                {course?.semester}
-            </div>
+            {/* Course Nav and Content */}
+            <div className="d-flex">
 
-            {/* Course Navigation */}
-            <CourseNavigation />
+                {/* Course sem and Course Nav */}
+                <div className="d-none d-md-block">
 
-            {/* Title */}
-            <div>
-                <div
-                    className="overflow-y-scroll position-fixed bottom-0 end-0"
-                    style={{ left: "320px", top: "5rem" }} >
-                    <Routes>
-                        <Route path="/" element={<Navigate to="Home" />} />
-                        <Route path="Home" element={<Home />} />
-                        <Route path="Modules" element={<Modules />} />
-                        <Route path="Piazza" element={<h1>Piazza</h1>} />
-                        <Route path="Assignments" element={<Assignments />} />
-                        <Route path="Assignments/:assignmentId" element={<AssignmentEditor />} />
-                        <Route path="Grades" element={<Grades />} />
-                    </Routes>
+                    {/* Course Sem info */}
+                    <div className="custom-semester">
+                        {course?.semester}
+                    </div>
+
+
+                    {/* Course Navigation */}
+                    <CourseNavigation />
+                </div>
+
+                {/* Course content */}
+                <div className="flex-fill me-2" style={{ marginLeft: "2rem", top: "5rem" }}>
+                    <div
+                        // className="overflow-y-scroll position-fixed bottom-0 end-0"
+                        style={{ left: "320px", top: "5rem" }} >
+                        <Routes>
+                            <Route path="/" element={<Navigate to="Home" />} />
+                            <Route path="Home" element={<Home />} />
+                            <Route path="Modules" element={<Modules />} />
+                            <Route path="Piazza" element={<h1>Piazza</h1>} />
+                            <Route path="Assignments" element={<Assignments />} />
+                            <Route path="Assignments/:assignmentId" element={<AssignmentEditor />} />
+                            <Route path="Grades" element={<Grades />} />
+                        </Routes>
+                    </div>
                 </div>
             </div>
+
         </div>
     );
 }

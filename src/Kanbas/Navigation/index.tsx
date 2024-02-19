@@ -9,16 +9,16 @@ function KanbasNavigation() {
         { label: "Dashboard", icon: <span className="fs-2 wd-active"><FaTachometerAlt /></span> },
         { label: "Courses", icon: <span className="fs-2"><FaBook /></span> },
         { label: "Calendar", icon: <span className="fs-2"><FaRegCalendarAlt /></span> },
-        { label: "Inbox", icon: <span className="fs-2"><FaInbox /></span>},
-        { label: "History", icon: <span className="fs-2"><FaClock /></span>},
-        { label: "Studio", icon: <span className="fs-2"><FaDesktop /></span>},
-        { label: "Commons", icon: <span className="fs-2"><FaShareSquare /></span>},
-        { label: "Help", icon: <span className="fs-2"><FaQuestionCircle /></span>}
+        { label: "Inbox", icon: <span className="fs-2"><FaInbox /></span> },
+        { label: "History", icon: <span className="fs-2"><FaClock /></span> },
+        { label: "Studio", icon: <span className="fs-2"><FaDesktop /></span> },
+        { label: "Commons", icon: <span className="fs-2"><FaShareSquare /></span> },
+        { label: "Help", icon: <span className="fs-2"><FaQuestionCircle /></span> }
 
     ];
     const { pathname } = useLocation();
     return (
-        <ul className="wd-kanbas-navigation">
+        <ul className="wd-kanbas-navigation d-none d-md-block">
             {links.map((link, index) => (
                 <li key={index} className={link.label && pathname.includes(link.label) ? "wd-active" : ""}>
                     {link.label ? (
