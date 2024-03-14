@@ -1,4 +1,3 @@
-import { courses } from "../../Kanbas/Database";
 import { Navigate, Link, Route, Routes, useParams, useLocation } from "react-router-dom";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
@@ -10,7 +9,7 @@ import { FaBars, FaBook, FaBullhorn, FaBullseye, FaChevronDown, FaCircleNotch, F
 import Grades from "./Grades";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
     const links = [
         { label: "Home", icon: <span className="collapse-course-icons"><FaHome /></span> },
         { label: "Modules", icon: <span className="collapse-course-icons"><FaCircleNotch /></span> },
