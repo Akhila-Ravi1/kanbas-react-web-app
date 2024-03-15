@@ -2,12 +2,11 @@ import Dashboard from "./Dashboard";
 import KanbasNavigation from "./Navigation";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Courses from "./Courses";
-import { courses } from "./Database";
 import { useState } from "react";
+import * as db from "./Database";
 
 function Kanbas() {
-   const [dbCourses, setDbCourses] = useState(courses);
-   const [isNewCourse, setIsNewCourse] = useState(true);
+   const [courses, setCourses] = useState(db.courses);
 
    const [course, setCourse] = useState({
       _id: "RS106", name: "Python Programming", number: "CS7130",
@@ -15,26 +14,15 @@ function Kanbas() {
       image: "brown.png"
    });
 
-   const [newCourse, setNewCourse] = useState({
-      _id: "RS106", name: "Python Programming", number: "CS7130",
-      startDate: "2023-09-10", endDate: "2023-12-15", semester: "202410_1 Fall 2023",
-      image: "brown.png"
-   });
 
    const addNewCourse = () => {
-      const newCourse = {
-         ...course,
-         _id: new Date().getTime().toString()
-      };
-      setDbCourses([...dbCourses, { ...course, ...newCourse }]);
+      setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
    };
-
-   const deleteCourse = (courseId: string) => {
-      setDbCourses(courses.filter((course) => course._id !== courseId));
+   const deleteCourse = (courseId: any) => {
+      setCourses(courses.filter((course) => course._id !== courseId));
    };
-
    const updateCourse = () => {
-      setDbCourses(
+      setCourses(
          courses.map((c) => {
             if (c._id === course._id) {
                return course;
@@ -44,6 +32,7 @@ function Kanbas() {
          })
       );
    };
+
    return (
       <div className="d-flex">
 
@@ -57,19 +46,15 @@ function Kanbas() {
                <Route path="Account" element={<h1>Account</h1>} />
                <Route path="Dashboard" element={
                   <Dashboard
-                     courses={dbCourses}
+                     courses={courses}
                      course={course}
-                     newCourse={newCourse}
-                     isNewCourse={isNewCourse}
                      setCourse={setCourse}
-                     setNewCourse={setNewCourse}
-                     setIsNewCourse={setIsNewCourse}
                      addNewCourse={addNewCourse}
                      deleteCourse={deleteCourse}
                      updateCourse={updateCourse} />
                } />
 
-               <Route path="Courses/:courseId/*" element={<Courses courses={dbCourses} />} />
+               <Route path="Courses/:courseId/*" element={<Courses courses={courses} />} />
             </Routes>
 
          </div>

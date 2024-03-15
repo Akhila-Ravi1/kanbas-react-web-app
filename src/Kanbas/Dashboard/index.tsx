@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { courses } from "../Database";
 import { FaEllipsisV, FaEdit } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineDelete } from "react-icons/md";
 
 function Dashboard(
-    { courses, course, newCourse, isNewCourse, setCourse, setNewCourse, setIsNewCourse,
-        addNewCourse, deleteCourse, updateCourse }: {
-            courses: any[]; course: any;
-            newCourse: any; isNewCourse: any;
-            setCourse: (course: any) => void;
-            setNewCourse: (newCourse: any) => void;
-            setIsNewCourse: (isNewCourse: any) => void;
+    { courses, course, setCourse, addNewCourse,
+        deleteCourse, updateCourse }: {
+            courses: any[]; course: any; setCourse: (course: any) => void;
             addNewCourse: () => void; deleteCourse: (course: any) => void;
             updateCourse: () => void;
         }) {
@@ -32,11 +27,7 @@ function Dashboard(
                 <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a className="btn btn-light" data-bs-toggle="collapse" href="#collapseExample"
                         role="button" aria-expanded="false"
-                        aria-controls="collapseExample"
-                        onClick={(event) => {
-                            setIsNewCourse(true);
-                            setNewCourse(newCourse);
-                        }}>
+                        aria-controls="collapseExample">
                         <FaPlus className="chk-icon-spacing" style={{ fontSize: "0.8em" }} aria-hidden="true" /> New Course
                     </a>
                 </div>
@@ -55,17 +46,35 @@ function Dashboard(
                     <input value={course.endDate} className="form-control" type="date" placeholder="Choose/Enter an end date of the course"
                         onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
 
-                    {isNewCourse ? (
-                        <button onClick={addNewCourse}
-                            className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
-                            data-bs-toggle="collapse">
-                            Add Course
-                        </button>
-                    ) : (
-                        <button onClick={updateCourse}>
-                            Update Course
-                        </button>
-                    )}
+                    <button onClick={addNewCourse}
+                        className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample">
+                        Add Course
+                    </button>
+
+                </div>
+            </div>
+
+            {/* New Course Collapse*/}
+            <div className="collapse" id="editCourseCollapse">
+                <div className="card card-body">
+
+                    <input value={course.name} className="form-control" placeholder="Enter the course name"
+                        onChange={(e) => setCourse({ ...course, name: e.target.value })} />
+                    <input value={course.number} className="form-control" placeholder="Enter the course number"
+                        onChange={(e) => setCourse({ ...course, number: e.target.value })} />
+                    <input value={course.startDate} className="form-control" type="date" placeholder="Choose/Enter a start date of the course"
+                        onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
+                    <input value={course.endDate} className="form-control" type="date" placeholder="Choose/Enter an end date of the course"
+                        onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
+
+                    <button onClick={updateCourse}
+                        className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#editCourseCollapse">
+                        Update Course
+                    </button>
 
                 </div>
             </div>
@@ -102,9 +111,10 @@ function Dashboard(
 
                                         {/* Edit */}
                                         <FaEdit style={{ color: "gray", marginTop: 2 }}
-                                            data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
+                                            data-bs-toggle="collapse" href="#editCourseCollapse"
+                                            role="button" aria-expanded="false"
+                                            aria-controls="editCourseCollapse"
                                             onClick={(event) => {
-                                                setIsNewCourse(false);
                                                 event.preventDefault();
                                                 setCourse(course);
                                             }} />
