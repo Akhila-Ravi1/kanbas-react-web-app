@@ -104,10 +104,13 @@ function Dashboard(
 
             <hr />
 
+
+            {/* Courses */}
             <div className="row">
                 <div className="row row-cols-1 row-cols-md-5 g-4">
                     {courses.map((course) => (
                         <div key={course._id} className="col" style={{ width: 300 }}>
+                            {/* Course card */}
                             <div className="card">
                                 {/* Image */}
                                 <img src={`/images/${course.image}`} className="card-img-top"
@@ -117,27 +120,29 @@ function Dashboard(
 
                                 {/* Content */}
                                 <div className="card-body">
+
+                                    {/* Course Title */}
                                     <Link className="card-title" to={`/Kanbas/Courses/${course._id}/Home`}
                                         style={{ textDecoration: "none", color: "navy", fontWeight: "bold" }}>
                                         {course.number} {course.name} </Link>
+
+                                    {/* Semester */}
                                     <p className="card-text">{course.semester}</p>
 
+                                    {/* Course Edit and Delete Button */}
                                     <div className="d-flex justify-content-between">
-                                        <Link to={`/Kanbas/Courses/${course._id}/Home`}>
-                                            <FaEdit style={{ color: "gray" }} />
-                                        </Link>
+
                                         {/* Edit */}
-                                        <a className="btn btn-light" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
+                                        <FaEdit style={{ color: "gray", marginTop: 2 }}
+                                            data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
                                             onClick={(event) => {
                                                 setIsNewCourse(false);
                                                 event.preventDefault();
                                                 setCourse(course);
-                                            }}>
-                                            Edit
-                                        </a>
+                                            }} />
 
                                         {/* Delete */}
-                                        <MdOutlineDelete style={{ color: "gray", marginTop: 6, fontSize: "larger" }} onClick={(event) => {
+                                        <MdOutlineDelete style={{ color: "gray", fontSize: "larger" }} onClick={(event) => {
                                             event.preventDefault();
                                             deleteCourse(course._id);
                                         }} />
