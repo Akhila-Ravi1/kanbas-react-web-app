@@ -4,42 +4,57 @@ import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaCaretDown, FaPlus, FaEdit } from "react-icons/fa";
 import { useParams } from "react-router";
 import { MdDelete } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import {
+    addModule,
+    deleteModule,
+    updateModule,
+    setModule,
+} from "./reducer";
+import { KanbasState } from "../../store";
+
 
 function ModuleList() {
     const { courseId } = useParams();
-    const [moduleList, setModuleList] = useState<any[]>(modules);
-    const [module, setModule] = useState({
-        _id: "",
-        name: "",
-        description: "",
-        course: courseId,
-    });
+    const moduleList = useSelector((state: KanbasState) =>
+        state.modulesReducer.modules);
+    const module = useSelector((state: KanbasState) =>
+        state.modulesReducer.module);
+    const dispatch = useDispatch();
 
-    const addModule = (module: any) => {
-        const newModule = {
-            ...module,
-            _id: new Date().getTime().toString()
-        };
-        const newModuleList = [newModule, ...moduleList];
-        setModuleList(newModuleList);
-    };
+    // const [moduleList, setModuleList] = useState<any[]>(modules);
+    // const [module, setModule] = useState({
+    //     _id: "",
+    //     name: "",
+    //     description: "",
+    //     course: courseId,
+    // });
 
-    const deleteModule = (moduleId: string) => {
-        const newModuleList = moduleList.filter(
-            (module) => module._id !== moduleId);
-        setModuleList(newModuleList);
-    };
+    // const addModule = (module: any) => {
+    //     const newModule = {
+    //         ...module,
+    //         _id: new Date().getTime().toString()
+    //     };
+    //     const newModuleList = [newModule, ...moduleList];
+    //     setModuleList(newModuleList);
+    // };
 
-    const updateModule = () => {
-        const newModuleList = moduleList.map((m) => {
-            if (m._id === module._id) {
-                return module;
-            } else {
-                return m;
-            }
-        });
-        setModuleList(newModuleList);
-    };
+    // const deleteModule = (moduleId: string) => {
+    //     const newModuleList = moduleList.filter(
+    //         (module) => module._id !== moduleId);
+    //     setModuleList(newModuleList);
+    // };
+
+    // const updateModule = () => {
+    //     const newModuleList = moduleList.map((m) => {
+    //         if (m._id === module._id) {
+    //             return module;
+    //         } else {
+    //             return m;
+    //         }
+    //     });
+    //     setModuleList(newModuleList);
+    // };
 
 
     // const modulesList = modules.filter((module) => module.course === courseId);
@@ -78,17 +93,18 @@ function ModuleList() {
                 <div className="card card-body">
                     <input value={module.name} placeholder="Enter a module name"
                         className="form-control"
-                        onChange={(e) => setModule({
-                            ...module, name: e.target.value
-                        })}
+                        onChange={(e) =>
+                            dispatch(setModule({ ...module, name: e.target.value }))
+                        }
                     />
                     <textarea value={module.description} placeholder="Enter a module description"
                         className="form-control"
-                        onChange={(e) => setModule({
-                            ...module, description: e.target.value
-                        })}
+                        onChange={(e) =>
+                            dispatch(setModule({ ...module, description: e.target.value }))
+                        }
                     />
-                    <button onClick={() => addModule(module)}
+                    <button
+                        onClick={() => dispatch(addModule({ ...module, course: courseId }))}
                         className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
                         data-bs-toggle="collapse"
                         data-bs-target="#newModuleCollapse">
@@ -101,17 +117,18 @@ function ModuleList() {
                 <div className="card card-body">
                     <input value={module.name} placeholder="Enter a module name"
                         className="form-control"
-                        onChange={(e) => setModule({
-                            ...module, name: e.target.value
-                        })}
+                        onChange={(e) =>
+                            dispatch(setModule({ ...module, name: e.target.value }))
+                        }
                     />
                     <textarea value={module.description} placeholder="Enter a module description"
                         className="form-control"
-                        onChange={(e) => setModule({
-                            ...module, description: e.target.value
-                        })}
+                        onChange={(e) =>
+                            dispatch(setModule({ ...module, description: e.target.value }))
+                        }
                     />
-                    <button onClick={updateModule}
+                    <button
+                        onClick={() => dispatch(updateModule(module))}
                         className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
                         data-bs-toggle="collapse"
                         data-bs-target="#editModuleCollapse">
@@ -128,7 +145,7 @@ function ModuleList() {
                         // Individual Module
                         <li
                             key={index} className="list-group-item"
-                            onClick={() => setSelectedModule(module)}>
+                            onClick={() => dispatch(setModule(module))}>
 
                             {/* Module title bar */}
                             <div>
@@ -137,7 +154,8 @@ function ModuleList() {
                                 <span className="float-end">
                                     <FaCheckCircle className="text-success" />
                                     <FaPlusCircle className="ms-2" />
-                                    <MdDelete className="ms-2" onClick={() => deleteModule(module._id)} />
+                                    <MdDelete className="ms-2"
+                                        onClick={() => dispatch(deleteModule(module._id))} />
                                     <FaEdit className="ms-2" data-bs-toggle="collapse"
                                         href="#editModuleCollapse"
                                         role="button" aria-expanded="false"
