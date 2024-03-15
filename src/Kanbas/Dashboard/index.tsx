@@ -16,52 +16,18 @@ function Dashboard(
             addNewCourse: () => void; deleteCourse: (course: any) => void;
             updateCourse: () => void;
         }) {
-    // const [dbCourses, setDbCourses] = useState(courses);
-    // const [isNewCourse, setIsNewCourse] = useState(true);
-
-    // const [course, setCourse] = useState({
-    //     _id: "RS106", name: "Python Programming", number: "CS7130",
-    //     startDate: "2023-09-10", endDate: "2023-12-15", semester: "202410_1 Fall 2023",
-    //     image: "brown.png"
-    // });
-
-    // const [newCourse, setNewCourse] = useState({
-    //     _id: "RS106", name: "Python Programming", number: "CS7130",
-    //     startDate: "2023-09-10", endDate: "2023-12-15", semester: "202410_1 Fall 2023",
-    //     image: "brown.png"
-    // });
-
-    // const addNewCourse = () => {
-    //     const newCourse = {
-    //         ...course,
-    //         _id: new Date().getTime().toString()
-    //     };
-    //     setDbCourses([...dbCourses, { ...course, ...newCourse }]);
-    // };
-
-    // const deleteCourse = (courseId: string) => {
-    //     setDbCourses(courses.filter((course) => course._id !== courseId));
-    // };
-
-    // const updateCourse = () => {
-    //     setDbCourses(
-    //         courses.map((c) => {
-    //             if (c._id === course._id) {
-    //                 return course;
-    //             } else {
-    //                 return c;
-    //             }
-    //         })
-    //     );
-    // };
 
     return (
         <div className="p-4">
+            {/* Page title - Dashboard */}
             <h1>Dashboard</h1>
             <hr />
 
+            {/* Subtitle - Published Courses + New course button */}
             <div className="d-flex justify-content-between">
+                {/* Published Courses subtitle */}
                 <div><h2>Published Courses (6)</h2></div>
+
                 {/* New Course */}
                 <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a className="btn btn-light" data-bs-toggle="collapse" href="#collapseExample"
@@ -80,17 +46,19 @@ function Dashboard(
             <div className="collapse" id="collapseExample">
                 <div className="card card-body">
 
-                    <input value={course.name} className="form-control"
+                    <input value={course.name} className="form-control" placeholder="Enter the course name"
                         onChange={(e) => setCourse({ ...course, name: e.target.value })} />
-                    <input value={course.number} className="form-control"
+                    <input value={course.number} className="form-control" placeholder="Enter the course number"
                         onChange={(e) => setCourse({ ...course, number: e.target.value })} />
-                    <input value={course.startDate} className="form-control" type="date"
+                    <input value={course.startDate} className="form-control" type="date" placeholder="Choose/Enter a start date of the course"
                         onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
-                    <input value={course.endDate} className="form-control" type="date"
+                    <input value={course.endDate} className="form-control" type="date" placeholder="Choose/Enter an end date of the course"
                         onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
 
                     {isNewCourse ? (
-                        <button onClick={addNewCourse} className="btn btn-success" data-bs-toggle="collapse">
+                        <button onClick={addNewCourse}
+                            className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
+                            data-bs-toggle="collapse">
                             Add Course
                         </button>
                     ) : (
