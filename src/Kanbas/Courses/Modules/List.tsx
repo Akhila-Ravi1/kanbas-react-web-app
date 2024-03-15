@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import { modules } from "../../Database";
-import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaCaretDown, FaPlus } from "react-icons/fa";
+import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaCaretDown, FaPlus, FaEdit } from "react-icons/fa";
 import { useParams } from "react-router";
 import { MdDelete } from "react-icons/md";
 
@@ -9,6 +9,7 @@ function ModuleList() {
     const { courseId } = useParams();
     const [moduleList, setModuleList] = useState<any[]>(modules);
     const [module, setModule] = useState({
+        _id: "",
         name: "",
         description: "",
         course: courseId,
@@ -28,6 +29,18 @@ function ModuleList() {
             (module) => module._id !== moduleId);
         setModuleList(newModuleList);
     };
+
+    const updateModule = () => {
+        const newModuleList = moduleList.map((m) => {
+            if (m._id === module._id) {
+                return module;
+            } else {
+                return m;
+            }
+        });
+        setModuleList(newModuleList);
+    };
+
 
     // const modulesList = modules.filter((module) => module.course === courseId);
     const [selectedModule, setSelectedModule] = useState(moduleList[0]);
@@ -77,8 +90,32 @@ function ModuleList() {
                     />
                     <button onClick={() => addModule(module)}
                         className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
-                        data-bs-toggle="collapse">
+                        data-bs-toggle="collapse"
+                        data-bs-target="#newModuleCollapse">
                         Add Module</button>
+                </div>
+            </div>
+
+            {/* Edit Module Collapse */}
+            <div className="collapse" id="editModuleCollapse">
+                <div className="card card-body">
+                    <input value={module.name} placeholder="Enter a module name"
+                        className="form-control"
+                        onChange={(e) => setModule({
+                            ...module, name: e.target.value
+                        })}
+                    />
+                    <textarea value={module.description} placeholder="Enter a module description"
+                        className="form-control"
+                        onChange={(e) => setModule({
+                            ...module, description: e.target.value
+                        })}
+                    />
+                    <button onClick={updateModule}
+                        className="btn btn-success d-grid gap-2 col-3 mx-auto mt-4"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#editModuleCollapse">
+                        Edit Module</button>
                 </div>
             </div>
 
@@ -101,6 +138,12 @@ function ModuleList() {
                                     <FaCheckCircle className="text-success" />
                                     <FaPlusCircle className="ms-2" />
                                     <MdDelete className="ms-2" onClick={() => deleteModule(module._id)} />
+                                    <FaEdit className="ms-2" data-bs-toggle="collapse"
+                                        href="#editModuleCollapse"
+                                        role="button" aria-expanded="false"
+                                        aria-controls="editModuleCollapse"
+                                        onClick={(event) => { setModule(module); }} />
+
                                     <FaEllipsisV className="ms-2" />
                                 </span>
                             </div>
