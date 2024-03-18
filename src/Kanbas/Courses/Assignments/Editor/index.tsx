@@ -7,7 +7,7 @@ import { addAssignment, setAssignment, updateAssignment } from "../reducer";
 import { KanbasState } from "../../../store";
 
 function AssignmentEditor() {
-    const { assignmentId } = useParams();
+    // const { assignmentId } = useParams();
     const { courseId } = useParams();
     const navigate = useNavigate();
 

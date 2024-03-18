@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { FaCheckCircle, FaEllipsisV, FaCaretDown, FaPlus } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
-import { assignments } from "../../Database";
 import { BsPencilSquare } from "react-icons/bs";
 import "./index.css";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../store";
-import { addAssignment, deleteAssignment, setAssignment, setEditMode } from "./reducer";
+import { deleteAssignment, setAssignment, setEditMode } from "./reducer";
 import { MdDelete } from "react-icons/md";
 
 
