@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCheckCircle, FaEllipsisV, FaCaretDown, FaPlus } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { assignments } from "../../Database";
@@ -19,9 +19,8 @@ function Assignments() {
     const isEditMode = useSelector((state: KanbasState) =>
         state.assignmentsReducer.isEditMode);
     const dispatch = useDispatch();
+    const [showModal, setShowModal] = useState(false);
 
-    // const assignmentList = assignments.filter(
-    //     (assignment) => assignment.course === courseId);
 
     return (
         <>
@@ -36,9 +35,10 @@ function Assignments() {
                         <FaPlus className="chk-icon-spacing" style={{ fontSize: '0.8em' }} />Group
                     </button>
                     <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                        className="btn btn-danger btn-sm btn-spacing"
+                        className="btn btn-danger btn-sm btn-spacing" style={{ paddingTop: 6 }}
                         onClick={() => dispatch(setEditMode(false))}>
-                        <FaPlus className="chk-icon-spacing" style={{ fontSize: '0.8em' }} />Assignment
+                        <FaPlus className="chk-icon-spacing" style={{ fontSize: '0.8em' }} />
+                        <span style={{ marginTop: 6 }}>Assignment</span>
                     </Link>
                     <button type="button" className="btn btn-outline-secondary btn-sm btn-spacing btn-color">
                         <FaEllipsisV />
@@ -86,11 +86,9 @@ function Assignments() {
                                     {/* Check icon, delete icon and More options ellipsis */}
                                     <span className="float-end">
                                         <FaCheckCircle className="text-success" />
-                                        <MdDelete className="ms-2" data-toggle="modal" data-target="#deleteAssignModal" />
+                                        <MdDelete className="ms-2" onClick={() => { setShowModal(true); dispatch(setAssignment(assignment)) }} />
                                         <FaEllipsisV className="ms-2" />
                                     </span>
-
-
 
                                     <div className="txt-subtitle">
                                         <span>{assignment.description}</span>
@@ -101,6 +99,33 @@ function Assignments() {
                     </ul>
                 </li>
             </ul>
+
+            {/* Modal for delete assignment confirmation */}
+            {showModal && (
+                <>
+                    <div className="modal-backdrop fade show"></div>
+                    <div className="modal fade show d-block" tabIndex={-1}>
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title">Delete Assignment</h5>
+                                    <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
+                                </div>
+                                <div className="modal-body">
+                                    <p>Are you sure you want to delete this assignment?</p>
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-danger" onClick={() => setShowModal(false)}>No</button>
+                                    <button type="button" className="btn btn-success" onClick={() => {
+                                        dispatch(deleteAssignment(assignment._id));
+                                        setShowModal(false);
+                                    }}>Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )}
         </>
     );
 }
