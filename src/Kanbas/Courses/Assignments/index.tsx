@@ -15,6 +15,7 @@ function Assignments() {
         state.assignmentsReducer.assignments);
     const assignment = useSelector((state: KanbasState) =>
         state.assignmentsReducer.assignment);
+    // eslint-disable-next-line
     const isEditMode = useSelector((state: KanbasState) =>
         state.assignmentsReducer.isEditMode);
     const dispatch = useDispatch();

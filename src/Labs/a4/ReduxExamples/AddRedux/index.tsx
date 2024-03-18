@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { add } from "./addReducer";
-import { LabState } from "../../../store";
 
 function AddRedux() {
     const [a, setA] = useState(12);

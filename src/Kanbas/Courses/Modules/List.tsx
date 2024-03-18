@@ -57,6 +57,7 @@ function ModuleList() {
 
 
     // const modulesList = modules.filter((module) => module.course === courseId);
+    // eslint-disable-next-line
     const [selectedModule, setSelectedModule] = useState(moduleList[0]);
 
     return (
